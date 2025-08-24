@@ -219,3 +219,7 @@ app.post("/api/login", async (req, res) => {
 });
 
 
+//環境変数がrenderで設定されているかのチェック
+console.log("JWT_SECRET:", process.env.JWT_SECRET ? "✅ 設定済" : "❌ 未設定");
+
+
