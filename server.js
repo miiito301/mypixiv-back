@@ -23,6 +23,8 @@ const pool = new Pool({
 // 作品削除 /api/works/:id
 
 
+//環境変数がrenderで設定されているかのチェック
+console.log("JWT_SECRET:", process.env.JWT_SECRET ? "✅ 設定済" : "❌ 未設定");
 
 //認証ミドルウェア
 function authMiddleware(req, res, next) {
@@ -218,8 +220,5 @@ app.post("/api/login", async (req, res) => {
   res.json({ token });
 });
 
-
-//環境変数がrenderで設定されているかのチェック
-console.log("JWT_SECRET:", process.env.JWT_SECRET ? "✅ 設定済" : "❌ 未設定");
 
 
